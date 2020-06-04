@@ -218,6 +218,7 @@ setnames(x = Agencias, old = "General-Agencia", new = "Agencia")
            outcome = gsub('^.*-Outcome ','',outcome))%>%
     mutate(organizacion = gsub('^.*proyectadas \\(2020 - 2023\\):-','', variable))%>% # Crea la columna Organizacion con el tipo de organización
     mutate(tipo = "proyectada") # Crea la columna tipo con el tipo de alizanza
+    
   
   Alianzasp <- Alianzasp%>%  mutate(variable = NULL)  #elimina columna variable  
 
