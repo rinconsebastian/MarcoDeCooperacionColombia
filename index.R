@@ -18,6 +18,11 @@ setDT(data)
 
 #1 RECURSOS AGENCIA
 
+#1.0 Agencias
+Agencias <- data %>%   #selecciona las columnas correspondientes a esta sección
+  select("General-Agencia") %>% distinct()
+setnames(x = Agencias, old = "General-Agencia", new = "Agencia")
+
 ##1.1. organizando recursos Disponibles por agencia
   recDisponibles <- data %>%   #selecciona las columnas correspondientes a esta sección
                     select(
@@ -30,6 +35,7 @@ setDT(data)
                          id=c("General-Agencia"), #los valores esten en una sola columna
                          value.name="valor")
   
+  setnames(x = recDisponibles, old = "General-Agencia", new = "Agencia")
   
  
   recDisponibles <- recDisponibles %>%
@@ -58,7 +64,7 @@ setDT(data)
                          id=c("General-Agencia"), #los valores esten en una sola columna
                          value.name="valor")
   
-  
+  setnames(x = recMovilizar, old = "General-Agencia", new = "Agencia")
   
   recMovilizar <- recMovilizar %>%
     mutate(variable = gsub('^General.*none">',"",variable)) %>% #elimina inicio de la col variable
@@ -85,9 +91,10 @@ setDT(data)
       "General-Agencia" |
         ends_with("¿Su agencia participa en este Outcome?"))
   
+  setnames(x = Outcome, old = "General-Agencia", new = "Agencia")
   
   Outcome <- melt(Outcome,   # hace un pivot a la tabla de manera que
-                       id=c("General-Agencia"), #los valores esten en una sola columna
+                       id=c("Agencia"), #los valores esten en una sola columna
                        value.name="La agencia participa en el Outcome")
   
   Outcome <- Outcome %>% mutate(eje = gsub('\\..*$','', variable), # Crea la columna EJe
@@ -110,13 +117,18 @@ setDT(data)
                  !contains("-Recursos-")) %>% 
         names() %>%                     #toma el nombre de las vcolumnas
         as.data.frame() %>%             #guarda los nombres en un dataframe
-        setnames("nombre") %>%          #establece el nombre de la unica columna del dataframe
-        mutate(outcome = gsub('^.*Outcome ','', nombre), # Crea la columna Outcome con el numero de cada outcome
+        setnames("Nombre") %>%          #establece el nombre de la unica columna del dataframe
+        mutate(outcome = gsub('^.*Outcome ','', Nombre), # Crea la columna Outcome con el numero de cada outcome
                outcome = gsub('-.*$','',outcome)) %>%
-        mutate(nombre = sub("^.*Outcome [0-9]\\.[0-9]-","",nombre)) #extrae el nombre del outcome
-  
+        mutate(Nombre = sub("^.*Outcome [0-9]\\.[0-9]-","",Nombre))%>% #extrae el nombre del outcome
+        mutate(Nombre =  paste(outcome,Nombre,sep = " "))
   
   Outcome <- merge(x = Outcome, y= outcomeNombres, by.x = "outcome", by.y = "outcome") #une el output con su nombre
+  
+  Outcome <- Outcome%>%  mutate(`La agencia participa en el Outcome` =
+                                ifelse(is.na(`La agencia participa en el Outcome`), "No", `La agencia participa en el Outcome`))%>%
+    mutate(`La agencia participa en el Outcome` = 
+             ifelse(`La agencia participa en el Outcome` == "Si", 1,0))
   
   
 #3 OUTPUTS
@@ -127,9 +139,11 @@ setDT(data)
       "General-Agencia" |
         contains("-Outputs-")&
         !contains("Indique"))
+  
+  setnames(x = Output, old = "General-Agencia", new = "Agencia")
     
   Output <- melt(Output,   # hace un pivot a la tabla de manera que
-                  id=c("General-Agencia"), #los valores esten en una sola columna
+                  id=c("Agencia"), #los valores esten en una sola columna
                   value.name="La agencia participa en el Output")
 
   Output <- Output%>%
@@ -145,9 +159,17 @@ setDT(data)
            output = gsub('( |: |\\.[a-zA-Z]|\\.(\\t| )[a-zA-Z]).*$','',output))
    
    Output <- Output%>%                                #crea la columna nombre con el nombre del output
-     mutate(nombre = gsub('^.*Outputs-[0-9]\\.[0-9]\\.[0-9]( |: |\\.[a-zA-Z]|\\.(\\t| )[a-zA-Z])','', variable))
+     mutate(Nombre = gsub('^.*Outputs-[0-9]\\.[0-9]\\.[0-9]( |: |\\.[a-zA-Z]|\\.(\\t| )[a-zA-Z])','', variable))%>%
+     mutate(Nombre =  paste(output,Nombre,sep = " "))
    
    Output <- Output%>%  mutate(variable = NULL)  #elimina columna variable                           
+   
+   Output <- Output%>%  mutate(`La agencia participa en el Output` =
+                                ifelse(is.na(`La agencia participa en el Output`), "No", `La agencia participa en el Output`))%>%
+                        mutate(`La agencia participa en el Output` = 
+                                 ifelse(`La agencia participa en el Output` == "Si", 1,0))
+   
+  
    
 
 #4 ALIANZAS
@@ -156,11 +178,12 @@ setDT(data)
                        select(
                          "General-Agencia" |
                            contains("-Alianzas-Alianzas Existentes:-"))   
+   setnames(x = AlianzasE, old = "General-Agencia", new = "Agencia")
    
   setDT(AlianzasE)
   
   AlianzasE <- melt(AlianzasE,   # hace un pivot a la tabla de manera que
-                  id=c("General-Agencia"), #los valores esten en una sola columna
+                  id=c("Agencia"), #los valores esten en una sola columna
                   value.name="La agencia esta aliada")                 
 
   AlianzasE <- AlianzasE%>%
@@ -180,10 +203,12 @@ setDT(data)
         contains("-Alianzas-Alianzas proyectadas (2020 - 2023):-")|
         contains("-Alianzas-Generación de Alianzas proyectadas (2020 - 2023):-"))   
   
+  setnames(x = Alianzasp, old = "General-Agencia", new = "Agencia")
+  
   setDT(Alianzasp)
   
   Alianzasp <- melt(Alianzasp,   # hace un pivot a la tabla de manera que
-                    id=c("General-Agencia"), #los valores esten en una sola columna
+                    id=c("Agencia"), #los valores esten en una sola columna
                     value.name="La agencia esta aliada")                 
   
   Alianzasp <- Alianzasp%>%
@@ -199,6 +224,8 @@ setDT(data)
   #4.3. Uniendo las alianzas
   alianzas <- rbind(AlianzasE,Alianzasp )
   
+  alianzas <- alianzas%>%  mutate(`La agencia esta aliada` =
+                                ifelse(is.na(`La agencia esta aliada`), 0, `La agencia esta aliada`))
   
 #5 RECURSOS
 ##5.1.  Seleccionando las columnas de recursos
@@ -211,8 +238,8 @@ setDT(data)
   
   setDT(Recursos)
   
-  Recursos <- melt(Recursos,   # hace un pivot a la tabla de manera que
-                    id=c("General-Agencia"), #los valores esten en una sola columna
+  Recursos <- melt(Recursos,   # hace un pivote a la tabla de manera que
+                    id=c("General-Agencia"), #los valores estén en una sola columna
                     value.name="valor")   
   
   Recursos <- Recursos%>%
@@ -220,7 +247,24 @@ setDT(data)
            eje = gsub('Eje ','',eje))%>%
     mutate(outcome = gsub('-Recursos-Recursos.*$','', variable), # Crea la columna Outcome con el número del outcome
            outcome = gsub('^.*-Outcome ','',outcome))%>%
-    mutate(periodo = gsub('-Recursos-Recursos.*$','', variable), # Crea la columna Outcome con el número del outcome
-           periodo = gsub('^.*-Outcome ','',outcome))%>%
-    mutate(organizacion = gsub('^.*proyectadas \\(2020 - 2023\\):-','', variable))%>% # Crea la columna Organizacion con el tipo de organización
-    mutate(tipo = "proyectada") # Crea la columna tipo con el tipo de alizanza
+    mutate(periodo = gsub('-recursos_.*$','', variable), # Crea la columna periodo con el número del año
+           periodo = gsub('^.*-Recursos-Recursos ','',periodo))%>%
+    mutate(organizacionTipo = gsub('</span>$','', variable), # Crea la columna organizaciónTipo con el nombre de la organización y tipo de recurso
+           organizacionTipo = gsub('^.*<span style="display:none">','',organizacionTipo))%>%
+    separate(col =organizacionTipo,into=c("organizacion","tipo"),sep="-", remove=TRUE) # separa col variable en dos columnas
+  
+  
+  Recursos <- Recursos%>%  mutate(variable = NULL)  #elimina columna variable  
+  
+  
+  openxlsx::write.xlsx(Recursos, file = "recursos.xlsx", colNames = TRUE)
+  fwrite(Recursos,"recursos.csv")
+  fwrite(Output,"outputs.csv")
+  fwrite(Outcome,"outcome.csv")
+  
+  
+#6 PROCESAMINETO DE INFORMACIÓN PARA GENERAR GRÁFICAS
+  
+l <- list("Agencias"= Agencias, "Outcome" = Outcome,"Output" = Output, "Alianzas" = alianzas)
+openxlsx::write.xlsx(l, "salida.xlsx")
+
