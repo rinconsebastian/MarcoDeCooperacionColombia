@@ -1,0 +1,261 @@
+﻿organizacion,Valor,Atributo,Total,Agencia,outcome
+Academia,0,existente,21,OIT,1.1
+Academia,0,existente,21,OIT,1.2
+Academia,0,existente,21,OIT,1.3
+Academia,0,existente,21,OIT,2.1
+Academia,0,existente,21,OIT,2.2
+Academia,0,existente,21,OIT,2.3
+Academia,0,existente,21,OIT,2.4
+Academia,0,existente,21,OIT,3.1
+Academia,0,existente,21,OIT,3.2
+Academia,0,existente,21,OIT,3.3
+Academia,0,existente,21,OIT,3.4
+Academia,0,existente,21,OIT,3.5
+Academia,0,existente,21,OIT,3.6
+Academia,0,proyectada,21,OIT,1.1
+Academia,0,proyectada,21,OIT,1.2
+Academia,0,proyectada,21,OIT,1.3
+Academia,0,proyectada,21,OIT,2.1
+Academia,0,proyectada,21,OIT,2.2
+Academia,0,proyectada,21,OIT,2.3
+Academia,0,proyectada,21,OIT,2.4
+Academia,0,proyectada,21,OIT,3.1
+Academia,0,proyectada,21,OIT,3.2
+Academia,1,proyectada,21,OIT,3.3
+Academia,0,proyectada,21,OIT,3.4
+Academia,0,proyectada,21,OIT,3.5
+Academia,0,proyectada,21,OIT,3.6
+Gobierno Nacional,1,existente,63,OIT,1.1
+Gobierno Nacional,1,existente,63,OIT,1.2
+Gobierno Nacional,0,existente,63,OIT,1.3
+Gobierno Nacional,0,existente,63,OIT,2.1
+Gobierno Nacional,0,existente,63,OIT,2.2
+Gobierno Nacional,1,existente,63,OIT,2.3
+Gobierno Nacional,1,existente,63,OIT,2.4
+Gobierno Nacional,1,existente,63,OIT,3.1
+Gobierno Nacional,1,existente,63,OIT,3.2
+Gobierno Nacional,1,existente,63,OIT,3.3
+Gobierno Nacional,1,existente,63,OIT,3.4
+Gobierno Nacional,0,existente,63,OIT,3.5
+Gobierno Nacional,0,existente,63,OIT,3.6
+Gobierno Nacional,0,proyectada,54,OIT,1.1
+Gobierno Nacional,0,proyectada,54,OIT,1.2
+Gobierno Nacional,0,proyectada,54,OIT,1.3
+Gobierno Nacional,1,proyectada,54,OIT,2.1
+Gobierno Nacional,0,proyectada,54,OIT,2.2
+Gobierno Nacional,0,proyectada,54,OIT,2.3
+Gobierno Nacional,0,proyectada,54,OIT,2.4
+Gobierno Nacional,0,proyectada,54,OIT,3.1
+Gobierno Nacional,0,proyectada,54,OIT,3.2
+Gobierno Nacional,1,proyectada,54,OIT,3.3
+Gobierno Nacional,0,proyectada,54,OIT,3.4
+Gobierno Nacional,0,proyectada,54,OIT,3.5
+Gobierno Nacional,0,proyectada,54,OIT,3.6
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,1.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,existente,45,OIT,1.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,1.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,2.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,2.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,existente,45,OIT,2.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,existente,45,OIT,2.4
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,3.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,3.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,3.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,existente,45,OIT,3.4
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,3.5
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,existente,45,OIT,3.6
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,1.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,1.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,1.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,proyectada,42,OIT,2.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,2.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,2.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,2.4
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,proyectada,42,OIT,3.1
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,proyectada,42,OIT,3.2
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1,proyectada,42,OIT,3.3
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,3.4
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,3.5
+"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",0,proyectada,42,OIT,3.6
+Iglesias,0,existente,9,OIT,1.1
+Iglesias,0,existente,9,OIT,1.2
+Iglesias,0,existente,9,OIT,1.3
+Iglesias,0,existente,9,OIT,2.1
+Iglesias,0,existente,9,OIT,2.2
+Iglesias,0,existente,9,OIT,2.3
+Iglesias,0,existente,9,OIT,2.4
+Iglesias,0,existente,9,OIT,3.1
+Iglesias,0,existente,9,OIT,3.2
+Iglesias,0,existente,9,OIT,3.3
+Iglesias,0,existente,9,OIT,3.4
+Iglesias,0,existente,9,OIT,3.5
+Iglesias,0,existente,9,OIT,3.6
+Iglesias,0,proyectada,8,OIT,1.1
+Iglesias,0,proyectada,8,OIT,1.2
+Iglesias,0,proyectada,8,OIT,1.3
+Iglesias,0,proyectada,8,OIT,2.1
+Iglesias,0,proyectada,8,OIT,2.2
+Iglesias,0,proyectada,8,OIT,2.3
+Iglesias,0,proyectada,8,OIT,2.4
+Iglesias,0,proyectada,8,OIT,3.1
+Iglesias,0,proyectada,8,OIT,3.2
+Iglesias,0,proyectada,8,OIT,3.3
+Iglesias,0,proyectada,8,OIT,3.4
+Iglesias,0,proyectada,8,OIT,3.5
+Iglesias,0,proyectada,8,OIT,3.6
+Ninguna,0,existente,2,OIT,1.1
+Ninguna,0,existente,2,OIT,1.2
+Ninguna,0,existente,2,OIT,1.3
+Ninguna,1,existente,2,OIT,2.1
+Ninguna,0,existente,2,OIT,2.2
+Ninguna,0,existente,2,OIT,2.3
+Ninguna,0,existente,2,OIT,2.4
+Ninguna,0,existente,2,OIT,3.1
+Ninguna,0,existente,2,OIT,3.2
+Ninguna,0,existente,2,OIT,3.3
+Ninguna,0,existente,2,OIT,3.4
+Ninguna,0,existente,2,OIT,3.5
+Ninguna,0,existente,2,OIT,3.6
+Ninguna,0,proyectada,2,OIT,1.1
+Ninguna,0,proyectada,2,OIT,1.2
+Ninguna,0,proyectada,2,OIT,1.3
+Ninguna,0,proyectada,2,OIT,2.1
+Ninguna,0,proyectada,2,OIT,2.2
+Ninguna,0,proyectada,2,OIT,2.3
+Ninguna,0,proyectada,2,OIT,2.4
+Ninguna,0,proyectada,2,OIT,3.1
+Ninguna,0,proyectada,2,OIT,3.2
+Ninguna,0,proyectada,2,OIT,3.3
+Ninguna,0,proyectada,2,OIT,3.4
+Ninguna,0,proyectada,2,OIT,3.5
+Ninguna,0,proyectada,2,OIT,3.6
+Organizaciones de Base,0,existente,21,OIT,1.1
+Organizaciones de Base,0,existente,21,OIT,1.2
+Organizaciones de Base,0,existente,21,OIT,1.3
+Organizaciones de Base,0,existente,21,OIT,2.1
+Organizaciones de Base,0,existente,21,OIT,2.2
+Organizaciones de Base,0,existente,21,OIT,2.3
+Organizaciones de Base,0,existente,21,OIT,2.4
+Organizaciones de Base,0,existente,21,OIT,3.1
+Organizaciones de Base,0,existente,21,OIT,3.2
+Organizaciones de Base,0,existente,21,OIT,3.3
+Organizaciones de Base,0,existente,21,OIT,3.4
+Organizaciones de Base,0,existente,21,OIT,3.5
+Organizaciones de Base,0,existente,21,OIT,3.6
+Organizaciones de Base,0,proyectada,22,OIT,1.1
+Organizaciones de Base,0,proyectada,22,OIT,1.2
+Organizaciones de Base,0,proyectada,22,OIT,1.3
+Organizaciones de Base,0,proyectada,22,OIT,2.1
+Organizaciones de Base,0,proyectada,22,OIT,2.2
+Organizaciones de Base,0,proyectada,22,OIT,2.3
+Organizaciones de Base,1,proyectada,22,OIT,2.4
+Organizaciones de Base,0,proyectada,22,OIT,3.1
+Organizaciones de Base,0,proyectada,22,OIT,3.2
+Organizaciones de Base,0,proyectada,22,OIT,3.3
+Organizaciones de Base,0,proyectada,22,OIT,3.4
+Organizaciones de Base,0,proyectada,22,OIT,3.5
+Organizaciones de Base,0,proyectada,22,OIT,3.6
+Organizaciones Sociales,1,existente,24,OIT,1.1
+Organizaciones Sociales,1,existente,24,OIT,1.2
+Organizaciones Sociales,0,existente,24,OIT,1.3
+Organizaciones Sociales,0,existente,24,OIT,2.1
+Organizaciones Sociales,0,existente,24,OIT,2.2
+Organizaciones Sociales,1,existente,24,OIT,2.3
+Organizaciones Sociales,1,existente,24,OIT,2.4
+Organizaciones Sociales,1,existente,24,OIT,3.1
+Organizaciones Sociales,0,existente,24,OIT,3.2
+Organizaciones Sociales,1,existente,24,OIT,3.3
+Organizaciones Sociales,0,existente,24,OIT,3.4
+Organizaciones Sociales,0,existente,24,OIT,3.5
+Organizaciones Sociales,0,existente,24,OIT,3.6
+Organizaciones Sociales,0,proyectada,22,OIT,1.1
+Organizaciones Sociales,0,proyectada,22,OIT,1.2
+Organizaciones Sociales,0,proyectada,22,OIT,1.3
+Organizaciones Sociales,1,proyectada,22,OIT,2.1
+Organizaciones Sociales,0,proyectada,22,OIT,2.2
+Organizaciones Sociales,0,proyectada,22,OIT,2.3
+Organizaciones Sociales,0,proyectada,22,OIT,2.4
+Organizaciones Sociales,0,proyectada,22,OIT,3.1
+Organizaciones Sociales,0,proyectada,22,OIT,3.2
+Organizaciones Sociales,0,proyectada,22,OIT,3.3
+Organizaciones Sociales,1,proyectada,22,OIT,3.4
+Organizaciones Sociales,0,proyectada,22,OIT,3.5
+Organizaciones Sociales,0,proyectada,22,OIT,3.6
+Otras,0,existente,26,OIT,1.1
+Otras,0,existente,26,OIT,1.2
+Otras,0,existente,26,OIT,1.3
+Otras,0,existente,26,OIT,2.1
+Otras,0,existente,26,OIT,2.2
+Otras,0,existente,26,OIT,2.3
+Otras,0,existente,26,OIT,2.4
+Otras,0,existente,26,OIT,3.1
+Otras,0,existente,26,OIT,3.2
+Otras,0,existente,26,OIT,3.3
+Otras,0,existente,26,OIT,3.4
+Otras,0,existente,26,OIT,3.5
+Otras,0,existente,26,OIT,3.6
+Otras,0,proyectada,29,OIT,1.1
+Otras,0,proyectada,29,OIT,1.2
+Otras,0,proyectada,29,OIT,1.3
+Otras,0,proyectada,29,OIT,2.1
+Otras,0,proyectada,29,OIT,2.2
+Otras,0,proyectada,29,OIT,2.3
+Otras,0,proyectada,29,OIT,2.4
+Otras,0,proyectada,29,OIT,3.1
+Otras,0,proyectada,29,OIT,3.2
+Otras,0,proyectada,29,OIT,3.3
+Otras,0,proyectada,29,OIT,3.4
+Otras,0,proyectada,29,OIT,3.5
+Otras,0,proyectada,29,OIT,3.6
+Sector Privado - Empresas,0,existente,38,OIT,1.1
+Sector Privado - Empresas,0,existente,38,OIT,1.2
+Sector Privado - Empresas,0,existente,38,OIT,1.3
+Sector Privado - Empresas,0,existente,38,OIT,2.1
+Sector Privado - Empresas,0,existente,38,OIT,2.2
+Sector Privado - Empresas,0,existente,38,OIT,2.3
+Sector Privado - Empresas,0,existente,38,OIT,2.4
+Sector Privado - Empresas,1,existente,38,OIT,3.1
+Sector Privado - Empresas,1,existente,38,OIT,3.2
+Sector Privado - Empresas,0,existente,38,OIT,3.3
+Sector Privado - Empresas,1,existente,38,OIT,3.4
+Sector Privado - Empresas,0,existente,38,OIT,3.5
+Sector Privado - Empresas,0,existente,38,OIT,3.6
+Sector Privado - Empresas,1,proyectada,41,OIT,1.1
+Sector Privado - Empresas,1,proyectada,41,OIT,1.2
+Sector Privado - Empresas,0,proyectada,41,OIT,1.3
+Sector Privado - Empresas,1,proyectada,41,OIT,2.1
+Sector Privado - Empresas,0,proyectada,41,OIT,2.2
+Sector Privado - Empresas,1,proyectada,41,OIT,2.3
+Sector Privado - Empresas,0,proyectada,41,OIT,2.4
+Sector Privado - Empresas,0,proyectada,41,OIT,3.1
+Sector Privado - Empresas,0,proyectada,41,OIT,3.2
+Sector Privado - Empresas,1,proyectada,41,OIT,3.3
+Sector Privado - Empresas,0,proyectada,41,OIT,3.4
+Sector Privado - Empresas,0,proyectada,41,OIT,3.5
+Sector Privado - Empresas,0,proyectada,41,OIT,3.6
+Sector Privado - Fundaciones,0,existente,16,OIT,1.1
+Sector Privado - Fundaciones,0,existente,16,OIT,1.2
+Sector Privado - Fundaciones,0,existente,16,OIT,1.3
+Sector Privado - Fundaciones,0,existente,16,OIT,2.1
+Sector Privado - Fundaciones,0,existente,16,OIT,2.2
+Sector Privado - Fundaciones,0,existente,16,OIT,2.3
+Sector Privado - Fundaciones,0,existente,16,OIT,2.4
+Sector Privado - Fundaciones,0,existente,16,OIT,3.1
+Sector Privado - Fundaciones,1,existente,16,OIT,3.2
+Sector Privado - Fundaciones,0,existente,16,OIT,3.3
+Sector Privado - Fundaciones,1,existente,16,OIT,3.4
+Sector Privado - Fundaciones,0,existente,16,OIT,3.5
+Sector Privado - Fundaciones,0,existente,16,OIT,3.6
+Sector Privado - Fundaciones,0,proyectada,14,OIT,1.1
+Sector Privado - Fundaciones,0,proyectada,14,OIT,1.2
+Sector Privado - Fundaciones,0,proyectada,14,OIT,1.3
+Sector Privado - Fundaciones,0,proyectada,14,OIT,2.1
+Sector Privado - Fundaciones,0,proyectada,14,OIT,2.2
+Sector Privado - Fundaciones,0,proyectada,14,OIT,2.3
+Sector Privado - Fundaciones,0,proyectada,14,OIT,2.4
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.1
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.2
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.3
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.4
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.5
+Sector Privado - Fundaciones,0,proyectada,14,OIT,3.6

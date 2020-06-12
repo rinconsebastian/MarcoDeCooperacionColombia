@@ -13,15 +13,27 @@ library(tidyr)
 
 #0  Obteniendo la información de Kobotoolbox
 data <- read_excel("datos.xlsx") 
+logos <- read_excel("logos.xlsx") 
+
+
+#reajustando nombres de agencias
+
+data <- data%>% mutate(`General-Agencia` = sub("Oficina de la Alta Comisionada de Naciones Unidas para los Derechos Humanos en Colombia", "HCHR",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional del Trabajo", "OIT",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional para las Migraciones", "OIM",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("ONU Mujeres", "ONUM",`General-Agencia`))
 
 setDT(data)
-
 #1 RECURSOS AGENCIA
 
 #1.0 Agencias
 Agencias <- data %>%   #selecciona las columnas correspondientes a esta sección
   select("General-Agencia") %>% distinct()
 setnames(x = Agencias, old = "General-Agencia", new = "Agencia")
+
+
+
+Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
 
 ##1.1. organizando recursos Disponibles por agencia
   recDisponibles <- data %>%   #selecciona las columnas correspondientes a esta sección

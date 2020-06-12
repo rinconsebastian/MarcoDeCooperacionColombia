@@ -1,0 +1,261 @@
+﻿Agencia,Atributo,organizacion,outcome,Total,Valor
+OIT,existente,Academia,1.1,22,0
+OIT,existente,Academia,1.2,39,0
+OIT,existente,Academia,1.3,14,0
+OIT,existente,Academia,2.1,17,0
+OIT,existente,Academia,2.2,20,0
+OIT,existente,Academia,2.3,25,0
+OIT,existente,Academia,2.4,19,0
+OIT,existente,Academia,3.1,21,0
+OIT,existente,Academia,3.2,19,0
+OIT,existente,Academia,3.3,18,0
+OIT,existente,Academia,3.4,19,0
+OIT,existente,Academia,3.5,24,0
+OIT,existente,Academia,3.6,8,0
+OIT,existente,Gobierno Nacional,1.1,22,1
+OIT,existente,Gobierno Nacional,1.2,39,1
+OIT,existente,Gobierno Nacional,1.3,14,0
+OIT,existente,Gobierno Nacional,2.1,17,0
+OIT,existente,Gobierno Nacional,2.2,20,0
+OIT,existente,Gobierno Nacional,2.3,25,1
+OIT,existente,Gobierno Nacional,2.4,19,1
+OIT,existente,Gobierno Nacional,3.1,21,1
+OIT,existente,Gobierno Nacional,3.2,19,1
+OIT,existente,Gobierno Nacional,3.3,18,1
+OIT,existente,Gobierno Nacional,3.4,19,1
+OIT,existente,Gobierno Nacional,3.5,24,0
+OIT,existente,Gobierno Nacional,3.6,8,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.1,22,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.2,39,1
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.3,14,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.1,17,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.2,20,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.3,25,1
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.4,19,1
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.1,21,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.2,19,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.3,18,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.4,19,1
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.5,24,0
+OIT,existente,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.6,8,0
+OIT,existente,Iglesias,1.1,22,0
+OIT,existente,Iglesias,1.2,39,0
+OIT,existente,Iglesias,1.3,14,0
+OIT,existente,Iglesias,2.1,17,0
+OIT,existente,Iglesias,2.2,20,0
+OIT,existente,Iglesias,2.3,25,0
+OIT,existente,Iglesias,2.4,19,0
+OIT,existente,Iglesias,3.1,21,0
+OIT,existente,Iglesias,3.2,19,0
+OIT,existente,Iglesias,3.3,18,0
+OIT,existente,Iglesias,3.4,19,0
+OIT,existente,Iglesias,3.5,24,0
+OIT,existente,Iglesias,3.6,8,0
+OIT,existente,Ninguna,1.1,22,0
+OIT,existente,Ninguna,1.2,39,0
+OIT,existente,Ninguna,1.3,14,0
+OIT,existente,Ninguna,2.1,17,1
+OIT,existente,Ninguna,2.2,20,0
+OIT,existente,Ninguna,2.3,25,0
+OIT,existente,Ninguna,2.4,19,0
+OIT,existente,Ninguna,3.1,21,0
+OIT,existente,Ninguna,3.2,19,0
+OIT,existente,Ninguna,3.3,18,0
+OIT,existente,Ninguna,3.4,19,0
+OIT,existente,Ninguna,3.5,24,0
+OIT,existente,Ninguna,3.6,8,0
+OIT,existente,Organizaciones de Base,1.1,22,0
+OIT,existente,Organizaciones de Base,1.2,39,0
+OIT,existente,Organizaciones de Base,1.3,14,0
+OIT,existente,Organizaciones de Base,2.1,17,0
+OIT,existente,Organizaciones de Base,2.2,20,0
+OIT,existente,Organizaciones de Base,2.3,25,0
+OIT,existente,Organizaciones de Base,2.4,19,0
+OIT,existente,Organizaciones de Base,3.1,21,0
+OIT,existente,Organizaciones de Base,3.2,19,0
+OIT,existente,Organizaciones de Base,3.3,18,0
+OIT,existente,Organizaciones de Base,3.4,19,0
+OIT,existente,Organizaciones de Base,3.5,24,0
+OIT,existente,Organizaciones de Base,3.6,8,0
+OIT,existente,Organizaciones Sociales,1.1,22,1
+OIT,existente,Organizaciones Sociales,1.2,39,1
+OIT,existente,Organizaciones Sociales,1.3,14,0
+OIT,existente,Organizaciones Sociales,2.1,17,0
+OIT,existente,Organizaciones Sociales,2.2,20,0
+OIT,existente,Organizaciones Sociales,2.3,25,1
+OIT,existente,Organizaciones Sociales,2.4,19,1
+OIT,existente,Organizaciones Sociales,3.1,21,1
+OIT,existente,Organizaciones Sociales,3.2,19,0
+OIT,existente,Organizaciones Sociales,3.3,18,1
+OIT,existente,Organizaciones Sociales,3.4,19,0
+OIT,existente,Organizaciones Sociales,3.5,24,0
+OIT,existente,Organizaciones Sociales,3.6,8,0
+OIT,existente,Otras,1.1,22,0
+OIT,existente,Otras,1.2,39,0
+OIT,existente,Otras,1.3,14,0
+OIT,existente,Otras,2.1,17,0
+OIT,existente,Otras,2.2,20,0
+OIT,existente,Otras,2.3,25,0
+OIT,existente,Otras,2.4,19,0
+OIT,existente,Otras,3.1,21,0
+OIT,existente,Otras,3.2,19,0
+OIT,existente,Otras,3.3,18,0
+OIT,existente,Otras,3.4,19,0
+OIT,existente,Otras,3.5,24,0
+OIT,existente,Otras,3.6,8,0
+OIT,existente,Sector Privado - Empresas,1.1,22,0
+OIT,existente,Sector Privado - Empresas,1.2,39,0
+OIT,existente,Sector Privado - Empresas,1.3,14,0
+OIT,existente,Sector Privado - Empresas,2.1,17,0
+OIT,existente,Sector Privado - Empresas,2.2,20,0
+OIT,existente,Sector Privado - Empresas,2.3,25,0
+OIT,existente,Sector Privado - Empresas,2.4,19,0
+OIT,existente,Sector Privado - Empresas,3.1,21,1
+OIT,existente,Sector Privado - Empresas,3.2,19,1
+OIT,existente,Sector Privado - Empresas,3.3,18,0
+OIT,existente,Sector Privado - Empresas,3.4,19,1
+OIT,existente,Sector Privado - Empresas,3.5,24,0
+OIT,existente,Sector Privado - Empresas,3.6,8,0
+OIT,existente,Sector Privado - Fundaciones,1.1,22,0
+OIT,existente,Sector Privado - Fundaciones,1.2,39,0
+OIT,existente,Sector Privado - Fundaciones,1.3,14,0
+OIT,existente,Sector Privado - Fundaciones,2.1,17,0
+OIT,existente,Sector Privado - Fundaciones,2.2,20,0
+OIT,existente,Sector Privado - Fundaciones,2.3,25,0
+OIT,existente,Sector Privado - Fundaciones,2.4,19,0
+OIT,existente,Sector Privado - Fundaciones,3.1,21,0
+OIT,existente,Sector Privado - Fundaciones,3.2,19,1
+OIT,existente,Sector Privado - Fundaciones,3.3,18,0
+OIT,existente,Sector Privado - Fundaciones,3.4,19,1
+OIT,existente,Sector Privado - Fundaciones,3.5,24,0
+OIT,existente,Sector Privado - Fundaciones,3.6,8,0
+OIT,proyectada,Academia,1.1,27,0
+OIT,proyectada,Academia,1.2,29,0
+OIT,proyectada,Academia,1.3,16,0
+OIT,proyectada,Academia,2.1,18,0
+OIT,proyectada,Academia,2.2,18,0
+OIT,proyectada,Academia,2.3,22,0
+OIT,proyectada,Academia,2.4,18,0
+OIT,proyectada,Academia,3.1,25,0
+OIT,proyectada,Academia,3.2,19,0
+OIT,proyectada,Academia,3.3,19,1
+OIT,proyectada,Academia,3.4,14,0
+OIT,proyectada,Academia,3.5,22,0
+OIT,proyectada,Academia,3.6,8,0
+OIT,proyectada,Gobierno Nacional,1.1,27,0
+OIT,proyectada,Gobierno Nacional,1.2,29,0
+OIT,proyectada,Gobierno Nacional,1.3,16,0
+OIT,proyectada,Gobierno Nacional,2.1,18,1
+OIT,proyectada,Gobierno Nacional,2.2,18,0
+OIT,proyectada,Gobierno Nacional,2.3,22,0
+OIT,proyectada,Gobierno Nacional,2.4,18,0
+OIT,proyectada,Gobierno Nacional,3.1,25,0
+OIT,proyectada,Gobierno Nacional,3.2,19,0
+OIT,proyectada,Gobierno Nacional,3.3,19,1
+OIT,proyectada,Gobierno Nacional,3.4,14,0
+OIT,proyectada,Gobierno Nacional,3.5,22,0
+OIT,proyectada,Gobierno Nacional,3.6,8,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.1,27,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.2,29,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",1.3,16,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.1,18,1
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.2,18,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.3,22,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",2.4,18,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.1,25,1
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.2,19,1
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.3,19,1
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.4,14,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.5,22,0
+OIT,proyectada,"Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)",3.6,8,0
+OIT,proyectada,Iglesias,1.1,27,0
+OIT,proyectada,Iglesias,1.2,29,0
+OIT,proyectada,Iglesias,1.3,16,0
+OIT,proyectada,Iglesias,2.1,18,0
+OIT,proyectada,Iglesias,2.2,18,0
+OIT,proyectada,Iglesias,2.3,22,0
+OIT,proyectada,Iglesias,2.4,18,0
+OIT,proyectada,Iglesias,3.1,25,0
+OIT,proyectada,Iglesias,3.2,19,0
+OIT,proyectada,Iglesias,3.3,19,0
+OIT,proyectada,Iglesias,3.4,14,0
+OIT,proyectada,Iglesias,3.5,22,0
+OIT,proyectada,Iglesias,3.6,8,0
+OIT,proyectada,Ninguna,1.1,27,0
+OIT,proyectada,Ninguna,1.2,29,0
+OIT,proyectada,Ninguna,1.3,16,0
+OIT,proyectada,Ninguna,2.1,18,0
+OIT,proyectada,Ninguna,2.2,18,0
+OIT,proyectada,Ninguna,2.3,22,0
+OIT,proyectada,Ninguna,2.4,18,0
+OIT,proyectada,Ninguna,3.1,25,0
+OIT,proyectada,Ninguna,3.2,19,0
+OIT,proyectada,Ninguna,3.3,19,0
+OIT,proyectada,Ninguna,3.4,14,0
+OIT,proyectada,Ninguna,3.5,22,0
+OIT,proyectada,Ninguna,3.6,8,0
+OIT,proyectada,Organizaciones de Base,1.1,27,0
+OIT,proyectada,Organizaciones de Base,1.2,29,0
+OIT,proyectada,Organizaciones de Base,1.3,16,0
+OIT,proyectada,Organizaciones de Base,2.1,18,0
+OIT,proyectada,Organizaciones de Base,2.2,18,0
+OIT,proyectada,Organizaciones de Base,2.3,22,0
+OIT,proyectada,Organizaciones de Base,2.4,18,1
+OIT,proyectada,Organizaciones de Base,3.1,25,0
+OIT,proyectada,Organizaciones de Base,3.2,19,0
+OIT,proyectada,Organizaciones de Base,3.3,19,0
+OIT,proyectada,Organizaciones de Base,3.4,14,0
+OIT,proyectada,Organizaciones de Base,3.5,22,0
+OIT,proyectada,Organizaciones de Base,3.6,8,0
+OIT,proyectada,Organizaciones Sociales,1.1,27,0
+OIT,proyectada,Organizaciones Sociales,1.2,29,0
+OIT,proyectada,Organizaciones Sociales,1.3,16,0
+OIT,proyectada,Organizaciones Sociales,2.1,18,1
+OIT,proyectada,Organizaciones Sociales,2.2,18,0
+OIT,proyectada,Organizaciones Sociales,2.3,22,0
+OIT,proyectada,Organizaciones Sociales,2.4,18,0
+OIT,proyectada,Organizaciones Sociales,3.1,25,0
+OIT,proyectada,Organizaciones Sociales,3.2,19,0
+OIT,proyectada,Organizaciones Sociales,3.3,19,0
+OIT,proyectada,Organizaciones Sociales,3.4,14,1
+OIT,proyectada,Organizaciones Sociales,3.5,22,0
+OIT,proyectada,Organizaciones Sociales,3.6,8,0
+OIT,proyectada,Otras,1.1,27,0
+OIT,proyectada,Otras,1.2,29,0
+OIT,proyectada,Otras,1.3,16,0
+OIT,proyectada,Otras,2.1,18,0
+OIT,proyectada,Otras,2.2,18,0
+OIT,proyectada,Otras,2.3,22,0
+OIT,proyectada,Otras,2.4,18,0
+OIT,proyectada,Otras,3.1,25,0
+OIT,proyectada,Otras,3.2,19,0
+OIT,proyectada,Otras,3.3,19,0
+OIT,proyectada,Otras,3.4,14,0
+OIT,proyectada,Otras,3.5,22,0
+OIT,proyectada,Otras,3.6,8,0
+OIT,proyectada,Sector Privado - Empresas,1.1,27,1
+OIT,proyectada,Sector Privado - Empresas,1.2,29,1
+OIT,proyectada,Sector Privado - Empresas,1.3,16,0
+OIT,proyectada,Sector Privado - Empresas,2.1,18,1
+OIT,proyectada,Sector Privado - Empresas,2.2,18,0
+OIT,proyectada,Sector Privado - Empresas,2.3,22,1
+OIT,proyectada,Sector Privado - Empresas,2.4,18,0
+OIT,proyectada,Sector Privado - Empresas,3.1,25,0
+OIT,proyectada,Sector Privado - Empresas,3.2,19,0
+OIT,proyectada,Sector Privado - Empresas,3.3,19,1
+OIT,proyectada,Sector Privado - Empresas,3.4,14,0
+OIT,proyectada,Sector Privado - Empresas,3.5,22,0
+OIT,proyectada,Sector Privado - Empresas,3.6,8,0
+OIT,proyectada,Sector Privado - Fundaciones,1.1,27,0
+OIT,proyectada,Sector Privado - Fundaciones,1.2,29,0
+OIT,proyectada,Sector Privado - Fundaciones,1.3,16,0
+OIT,proyectada,Sector Privado - Fundaciones,2.1,18,0
+OIT,proyectada,Sector Privado - Fundaciones,2.2,18,0
+OIT,proyectada,Sector Privado - Fundaciones,2.3,22,0
+OIT,proyectada,Sector Privado - Fundaciones,2.4,18,0
+OIT,proyectada,Sector Privado - Fundaciones,3.1,25,0
+OIT,proyectada,Sector Privado - Fundaciones,3.2,19,0
+OIT,proyectada,Sector Privado - Fundaciones,3.3,19,0
+OIT,proyectada,Sector Privado - Fundaciones,3.4,14,0
+OIT,proyectada,Sector Privado - Fundaciones,3.5,22,0
+OIT,proyectada,Sector Privado - Fundaciones,3.6,8,0
