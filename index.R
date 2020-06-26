@@ -22,6 +22,7 @@ data <- data%>% mutate(`General-Agencia` = sub("Oficina de la Alta Comisionada d
 data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional del Trabajo", "OIT",`General-Agencia`))
 data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional para las Migraciones", "OIM",`General-Agencia`))
 data <- data%>% mutate(`General-Agencia` = sub("ONU Mujeres", "ONUM",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("Alto Comisionando de las Naciones Unidas para los Refugiados- ACNUR", "ACNUR",`General-Agencia`))
 
 setDT(data)
 #1 RECURSOS AGENCIA
@@ -240,6 +241,11 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
   alianzas <- alianzas%>%  mutate(`La agencia esta aliada` =
                                 ifelse(is.na(`La agencia esta aliada`), 0, `La agencia esta aliada`))
   
+  #4.4. Eliminando las alizansas con "ninguno"
+  alianzas <- alianzas%>% filter(organizacion != "Ninguna")
+  
+  
+  
 #5 RECURSOS
 ##5.1.  Seleccionando las columnas de recursos
   Recursos <- data %>%   #selecciona las columnas correspondientes a esta sección
@@ -249,10 +255,12 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
         !contains("total")&
         ends_with("</span>"))   
   
+  
+  setnames(x = Recursos, old = "General-Agencia", new = "Agencia")
   setDT(Recursos)
   
   Recursos <- melt(Recursos,   # hace un pivote a la tabla de manera que
-                    id=c("General-Agencia"), #los valores estén en una sola columna
+                    id=c("Agencia"), #los valores estén en una sola columna
                     value.name="valor")   
   
   Recursos <- Recursos%>%
@@ -270,14 +278,63 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
   Recursos <- Recursos%>%  mutate(variable = NULL)  #elimina columna variable  
   
   
-  openxlsx::write.xlsx(Recursos, file = "recursos.xlsx", colNames = TRUE)
-  fwrite(Recursos,"recursos.csv")
-  fwrite(Output,"outputs.csv")
-  fwrite(Outcome,"outcome.csv")
+  #openxlsx::write.xlsx(Recursos, file = "recursos.xlsx", colNames = TRUE)
+  #fwrite(Recursos,"recursos.csv")
+  #fwrite(Output,"outputs.csv")
+  #fwrite(Outcome,"outcome.csv")
+
+#6 ====================================== VALOR AGREGADO =============================================
+  
+  dataValor <- read_excel("datosEncuestaAnterior.xlsx") 
+  
+  dataValor <- dataValor %>%   #selecciona las columnas correspondientes a esta sección
+    select(
+      "Agencia:" |
+        starts_with("Información para la")|
+        starts_with("Insumos política")|
+        starts_with("Fortalecimiento de ")|
+        starts_with("Formulación y ejecución de")|
+        starts_with("Gestión del conocimiento")|
+        starts_with("Generación de Alianzas"))
+  
+  setDT(dataValor)
+      dataValor <- reshape2::melt(data = dataValor, "Agencia:")
+  
+     
+      
+        
+  dataValor <- dataValor %>%  mutate(nOutcome = as.integer(gsub("^.*\\.","",variable)))%>%
+                              mutate(variable = gsub("\\.\\.\\..*$","",variable)) %>%
+                              mutate(outcome = ifelse(nOutcome>=34,outcomeNombres$Nombre[1],""))%>%
+                              mutate(outcome = ifelse(nOutcome>=57,outcomeNombres$Nombre[2],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=76,outcomeNombres$Nombre[3],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=95,outcomeNombres$Nombre[4],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=114,outcomeNombres$Nombre[5],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=134,outcomeNombres$Nombre[6],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=154,outcomeNombres$Nombre[7],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=174,outcomeNombres$Nombre[8],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=193,outcomeNombres$Nombre[9],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=215,outcomeNombres$Nombre[10],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=235,outcomeNombres$Nombre[11],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=256,outcomeNombres$Nombre[12],outcome))%>%
+                              mutate(outcome = ifelse(nOutcome>=276,outcomeNombres$Nombre[13],outcome))%>%
+                              mutate(nOutcome = NULL)%>%
+                              mutate(value = as.integer(value))
+    
+
+  setnames(x = dataValor, old = "Agencia:", new = "Agencia")
+  
+  dataValor <- dataValor%>% mutate(Agencia = sub("Organización de las Naciones Unidas para el Desarrollo Industrial \\(ONUDI\\)", "ONUDI",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("Organización Internacional para las Migraciones \\(OIM\\)", "OIM",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("COMISION ECONÓMICA PARA AMÉRICA LATINA, CEPAL, OFICINA DE COLOMBIA", "CEPAL",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("ORGANIZACION PANAMERICANA DE LA SALUD/ORGANIZACION MUNDIAL DE LA SALUD\\- OPS/OMS", "OPS",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("ONU Mujeres", "ONUM",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos \\(OACNUDH \\)", "HCHR",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("Oficina de las Naciones Unidas contra la Droga y el Delito \\(UNODC\\)", "UNODC",Agencia))
   
   
-#6 PROCESAMINETO DE INFORMACIÓN PARA GENERAR GRÁFICAS
+#7 PROCESAMINETO DE INFORMACIÓN PARA GENERAR GRÁFICAS
   
-l <- list("Agencias"= Agencias, "Outcome" = Outcome,"Output" = Output, "Alianzas" = alianzas)
+l <- list("Agencias"= Agencias, "Outcome" = Outcome,"Output" = Output, "Alianzas" = alianzas, "Recursos" = Recursos, "ValorAgregado" = dataValor )
 openxlsx::write.xlsx(l, "salida.xlsx")
 
