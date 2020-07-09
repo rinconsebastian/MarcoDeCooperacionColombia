@@ -9,6 +9,7 @@ library(readxl)
 library(dplyr)
 library(data.table)
 library(tidyr)
+library(splitstackshape)
 
 
 #0  Obteniendo la información de Kobotoolbox
@@ -18,11 +19,14 @@ logos <- read_excel("logos.xlsx")
 
 #reajustando nombres de agencias
 
-data <- data%>% mutate(`General-Agencia` = sub("Oficina de la Alta Comisionada de Naciones Unidas para los Derechos Humanos en Colombia", "HCHR",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("Oficina de la Alta Comisionada de Naciones Unidas para los Derechos Humanos en Colombia", "OACNUDH",`General-Agencia`))
 data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional del Trabajo", "OIT",`General-Agencia`))
 data <- data%>% mutate(`General-Agencia` = sub("Organización Internacional para las Migraciones", "OIM",`General-Agencia`))
-data <- data%>% mutate(`General-Agencia` = sub("ONU Mujeres", "ONUM",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("ONU Mujeres", "ONU_M",`General-Agencia`))
 data <- data%>% mutate(`General-Agencia` = sub("Alto Comisionando de las Naciones Unidas para los Refugiados- ACNUR", "ACNUR",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("UN World Food Programme", "PMA",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("OPS", "OMS/OPS",`General-Agencia`))
+data <- data%>% mutate(`General-Agencia` = sub("UNODC", "UNODC",`General-Agencia`))
 
 setDT(data)
 #1 RECURSOS AGENCIA
@@ -244,6 +248,12 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
   #4.4. Eliminando las alizansas con "ninguno"
   alianzas <- alianzas%>% filter(organizacion != "Ninguna")
   
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Gobierno Nacional","Gob. Nacional",organizacion))
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Gobiernos Territoriales(Gobernaciones, Alcaldías, CARs)","Gobs. Territoriales",organizacion))
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Organizaciones de Base","Org. de Base",organizacion))
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Organizaciones Sociales","Org. Sociales",organizacion))
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Sector Privado - Empresas","Empresas",organizacion))
+  alianzas <- alianzas%>%mutate(organizacion = ifelse(organizacion== "Sector Privado - Fundaciones","Fundaciones",organizacion))
   
   
 #5 RECURSOS
@@ -275,10 +285,19 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
     separate(col =organizacionTipo,into=c("organizacion","tipo"),sep="-", remove=TRUE) # separa col variable en dos columnas
   
   
-  Recursos <- Recursos%>%  mutate(variable = NULL)  #elimina columna variable  
+  Recursos <- Recursos%>%  mutate(variable = NULL)  #elimina columna variable 
+  Recursos <- Recursos%>%  mutate(tipo = ifelse(tipo =="caja","En caja",tipo))  #elimina columna variable 
+  
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "cooperacion","Cooperantes",organizacion))
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "identificar","Por Identificar",organizacion))
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "local","Gobs. Locales",organizacion))
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "nacional","Gob. Nacional",organizacion))
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "privado","Sec. Privado",organizacion))
+  Recursos <- Recursos%>%mutate(organizacion = ifelse(organizacion== "propios","Rec. Propios",organizacion))
   
   
-  #openxlsx::write.xlsx(Recursos, file = "recursos.xlsx", colNames = TRUE)
+  
+  openxlsx::write.xlsx(Recursos, file = "recursos.xlsx", colNames = TRUE)
   #fwrite(Recursos,"recursos.csv")
   #fwrite(Output,"outputs.csv")
   #fwrite(Outcome,"outcome.csv")
@@ -327,14 +346,250 @@ Agencias <- merge(Agencias, logos, by = "Agencia",all.x = T )
   dataValor <- dataValor%>% mutate(Agencia = sub("Organización de las Naciones Unidas para el Desarrollo Industrial \\(ONUDI\\)", "ONUDI",Agencia))
   dataValor <- dataValor%>% mutate(Agencia = sub("Organización Internacional para las Migraciones \\(OIM\\)", "OIM",Agencia))
   dataValor <- dataValor%>% mutate(Agencia = sub("COMISION ECONÓMICA PARA AMÉRICA LATINA, CEPAL, OFICINA DE COLOMBIA", "CEPAL",Agencia))
-  dataValor <- dataValor%>% mutate(Agencia = sub("ORGANIZACION PANAMERICANA DE LA SALUD/ORGANIZACION MUNDIAL DE LA SALUD\\- OPS/OMS", "OPS",Agencia))
-  dataValor <- dataValor%>% mutate(Agencia = sub("ONU Mujeres", "ONUM",Agencia))
-  dataValor <- dataValor%>% mutate(Agencia = sub("Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos \\(OACNUDH \\)", "HCHR",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("ORGANIZACION PANAMERICANA DE LA SALUD/ORGANIZACION MUNDIAL DE LA SALUD\\- OPS/OMS", "OMS/OPS",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("ONU Mujeres", "ONU_M",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos \\(OACNUDH \\)", "OACNUDH",Agencia))
   dataValor <- dataValor%>% mutate(Agencia = sub("Oficina de las Naciones Unidas contra la Droga y el Delito \\(UNODC\\)", "UNODC",Agencia))
+  dataValor <- dataValor%>% mutate(Agencia = sub("WFP", "PMA",Agencia))
+  
+  dataValor <- dataValor%>% mutate(variable = sub("Formulación y ejecución de proyectos", "4.Formulación y ejecución de proyectos",variable))
+  dataValor <- dataValor%>% mutate(variable = sub("Fortalecimiento de capacidades", "3. Fortalecimiento de capacidades",variable))
+  dataValor <- dataValor%>% mutate(variable = sub("Generación de Alianzas", "6. Generación de Alianzas",variable))
+  dataValor <- dataValor%>% mutate(variable = sub("Gestión del conocimiento", "5. Gestión del conocimiento",variable))
+  dataValor <- dataValor%>% mutate(variable = sub("Información para la toma de decisiones", "1. Información para la toma de decisiones",variable))
+  dataValor <- dataValor%>% mutate(variable = sub("Insumos política pública", "2. Insumos política pública",variable))
+ 
+  
+#ESTRUCTURA
+  estructura <- Output %>% select(Nombre, output, outcome,eje) %>% distinct()
+  estructura <- merge(x = estructura, y= outcomeNombres, by.x = "outcome", by.y = "outcome") #une el output con su nombre
+  estructura <- estructura %>% mutate(outcome = NULL) %>% mutate(output = NULL)
+  setnames(x = estructura, old = "Nombre.x", new = "Output")
+  setnames(x = estructura, old = "Nombre.y", new = "Outcome")
+  estructura <- estructura %>% mutate(eje = ifelse(eje == 1, "1. Paz con Legalidad",eje)) %>%
+                           mutate(eje = ifelse(eje == 2, "2. Migración como factor de Desarrollo",eje)) %>%
+                           mutate(eje = ifelse(eje == 3, "3. Asistencia Técnica para la Aceleración de los ODS Catalizadores",eje)) %>%
+                           mutate(Marco = "Marco de cooperación 2020 - 2023") %>%
+                           mutate(Outputs = 1)
+  setnames(x = estructura, old = "eje", new = "Eje")
+    
+#PROGRAMAS PROYECTADOS
+  dataProyectos <- read_excel("datos.xlsx", sheet="prorgamaProyectado")
+  names(dataProyectos) <- c("Programa","Agencias","Outcome","1.1","1.2","1.3","2.1","2.2","2.3","2.4","3.1","3.2","3.3","3.4","3.5","3.6","adicional","indice","formulario","Padre","id","uuid","fecha","estado")
+  
+  dataProyectos <- dataProyectos %>% select(-Outcome,-adicional, -indice,-formulario,-id,-uuid,-fecha,-estado)
+  encuestaprincipal <- read_excel("datos.xlsx") %>% select(`General-Agencia`,`_index`)
+  dataProyectos <- merge(x = dataProyectos, y= encuestaprincipal, by.x = "Padre", by.y = "_index")
+  
+  dataProyectos <- dataProyectos %>% select(-Padre)
+  setnames(x = dataProyectos, old = "General-Agencia", new = "Agencia")
+  
+ 
+  
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "Alto Comisionando de las Naciones Unidas para los Refugiados- ACNUR", "ACNUR", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "ONU Mujeres", "ONU_M", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "Organización Internacional del Trabajo", "OIT", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "Organización Internacional para las Migraciones", "OIM", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "UN World Food Programme", "PMA", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = ifelse(Agencia == "UNODC", "UNODC", Agencia))
+  dataProyectos <- dataProyectos %>% mutate(Agencia = as.factor(Agencia))
   
   
-#7 PROCESAMINETO DE INFORMACIÓN PARA GENERAR GRÁFICAS
   
-l <- list("Agencias"= Agencias, "Outcome" = Outcome,"Output" = Output, "Alianzas" = alianzas, "Recursos" = Recursos, "ValorAgregado" = dataValor )
+  dataProyectos <- dataProyectos %>% mutate(
+                    Agencias =gsub("\\-",",",Agencias),
+                    Agencias =gsub("[yY]",",",Agencias),
+                    Agencias =gsub("(ONUMUJERES|ONU Mujeres)","ONU_M",Agencias),
+                    Agencias =gsub("ECLAC","CELAC",Agencias),
+                    Agencias =gsub("OPS","OMS/OPS",Agencias),
+                    Agencias =gsub("(ONU DDHH|DDHH)","OACNUDH",Agencias),
+                    Agencias =gsub("UNIDO","ONUDI",Agencias),
+                    Agencias =gsub("por definir","",Agencias),
+                    Agencias =gsub(" ","",Agencias),
+                    Agencias =gsub("ONUHábitat,","",Agencias),
+                    Agencias =gsub("(ECLAC|CELAC)","CEPAL",Agencias),
+                    Agencias =gsub("OMS/OMS/OPS","OMS/OPS",Agencias),
+                    Agencias =gsub("UNODC","UNODC",Agencias),
+                    Agencias =gsub("UNDP","PNUD",Agencias),
+                    Agencias =gsub("WFP","PMA",Agencias),)
+  
+  
+  dataProyectos <-arrange(dataProyectos,dataProyectos$Programa)
+  
+  dataProyectos <-cSplit(dataProyectos, "Agencias", ",")
+  
+  proyectosMelted <- melt(dataProyectos,   # hace un pivot a la tabla de maner
+                          id=c("Programa","1.1","1.2","1.3","2.1","2.2","2.3","2.4","3.1","3.2","3.3","3.4","3.5","3.6"), #los valores esten en una sola columna
+                          value.name="Agencia" )
+  
+  proyectosMelted <- proyectosMelted %>% filter(!is.na(variable), !is.na(Agencia)) %>% select(-variable)
+  
+  setDT(proyectosMelted)
+  proyectosMelted <- melt(proyectosMelted,   # hace un pivot a la tabla de maner
+                          id=c("Programa","Agencia"), #los valores esten en una sola columna
+                          value.name="Participa" ,variable.name = "Outcome")
+  
+  programasProyectaods <- proyectosMelted %>% arrange(proyectosMelted$Programa) %>% distinct() %>% mutate(Tipo="Proyectado")
+  
+  summary(as.factor(programasProyectaods$Agencia))
+
+  
+  #PROGRAMAS PRESENTES
+  dataConjuntos <- read_excel("datos.xlsx", sheet="programaConjunto")
+  names(dataConjuntos) <- c("Programa","Codigo","Agencias","Outcome","1.1","1.2","1.3","2.1","2.2","2.3","2.4","3.1","3.2","3.3","3.4","3.5","3.6","adicional","indice","formulario","Padre","id","uuid","fecha","estado")
+  
+  dataConjuntos <- dataConjuntos %>% select(-Outcome,-adicional, -indice,-formulario,-id,-uuid,-fecha,-estado,- Codigo)
+  encuestaprincipal <- read_excel("datos.xlsx") %>% select(`General-Agencia`,`_index`)
+  dataConjuntos <- merge(x = dataConjuntos, y= encuestaprincipal, by.x = "Padre", by.y = "_index")
+  
+  dataConjuntos <- dataConjuntos %>% select(-Padre)
+  setnames(x = dataConjuntos, old = "General-Agencia", new = "Agencia")
+  
+  
+ 
+  
+  
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "Alto Comisionando de las Naciones Unidas para los Refugiados- ACNUR", "ACNUR", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "ONU Mujeres", "ONU_M", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "Organización Internacional del Trabajo", "OIT", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "Organización Internacional para las Migraciones", "OIM", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "UN World Food Programme", "PMA", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = ifelse(Agencia == "UNODC", "UNODC", Agencia))
+  dataConjuntos <- dataConjuntos %>% mutate(Agencia = as.factor(Agencia))
+  
+  
+  
+  dataConjuntos <- dataConjuntos %>% mutate(
+    Agencias =gsub("\\-",",",Agencias),
+    Agencias =gsub("\n",",",Agencias),
+    Agencias =gsub("[yY]",",",Agencias),
+    Agencias =gsub("(ONUMUJERES|ONU Mujeres|ONU MUJERES)","ONU_M",Agencias),
+    Agencias =gsub("ECLAC","CELAC",Agencias),
+    Agencias =gsub("OPS","OMS/OPS",Agencias),
+    Agencias =gsub("(ONU DDHH|DDHH)","OACNUDH",Agencias),
+    Agencias =gsub("UNIDO","ONUDI",Agencias),
+    Agencias =gsub("por definir","",Agencias),
+    Agencias =gsub(" ","",Agencias),
+    Agencias =gsub("(ONUHábitat|ONUHabitát),","",Agencias),
+    Agencias =gsub("ECLAC","CEPAL",Agencias),
+    Agencias =gsub("OMS/OMS/OPS","OMS/OPS",Agencias),
+    Agencias =gsub("UNODC","UNODC",Agencias),
+    Agencias =gsub("WFP","PMA",Agencias),)
+  
+  
+  dataConjuntos <- dataConjuntos %>% mutate(Agencias = as.factor(Agencias))
+ 
+  
+  dataConjuntos <-arrange(dataConjuntos,dataConjuntos$Programa)
+  
+  dataConjuntos <-cSplit(dataConjuntos, "Agencias", ",")
+  
+  ConjuntosMelted <- melt(dataConjuntos,   # hace un pivot a la tabla de maner
+                          id=c("Programa","1.1","1.2","1.3","2.1","2.2","2.3","2.4","3.1","3.2","3.3","3.4","3.5","3.6"), #los valores esten en una sola columna
+                          value.name="Agencia" )
+  
+  ConjuntosMelted <- ConjuntosMelted %>% filter(!is.na(variable), !is.na(Agencia)) %>% select(-variable)
+  
+  setDT(ConjuntosMelted)
+  ConjuntosMelted <- melt(ConjuntosMelted,   # hace un pivot a la tabla de maner
+                          id=c("Programa","Agencia"), #los valores esten en una sola columna
+                          value.name="Participa" ,variable.name = "Outcome")
+  
+  programasConjuntos <- ConjuntosMelted %>% arrange(ConjuntosMelted$Programa) %>% distinct()  %>% mutate(Tipo="Existente")
+  
+  summary(as.factor(programasConjuntos$Agencia))
+  
+  
+  programas <- rbind(programasConjuntos, programasProyectaods)
+  
+  #8.1 matriz colaboracion de agencias
+  
+  matrizColaboracion <- Agencias
+  
+  matrizColaboracion <- matrizColaboracion%>%mutate(Logo = NULL)
+  
+  matrizColaboracion <- matrizColaboracion%>%mutate(Agencia2 =Agencia)
+  matrizColaboracion <- matrizColaboracion%>%mutate(valor =0)
+  
+  matrizColaboracion <- dcast(data=matrizColaboracion,Agencia ~ Agencia2, fill = 0 )
+  matrizColaboracion <- matrizColaboracion%>%mutate(Agencia = NULL)
+  row.names(matrizColaboracion) <- Agencias[,Agencia]
+  
+ 
+  
+  
+  
+  for(ProgramaN in programasConjuntos$Programa){
+    
+    programasN <- programasConjuntos%>%filter(Programa == ProgramaN) %>% group_by(Agencia) %>% summarise(Participa = sum(as.integer(Participa)))
+    
+   
+    for(x in 1:nrow(programasN)){
+     
+       for(y in x:nrow(programasN)){
+        
+        if(x != y){
+        
+        matrizColaboracion [programasN[x,]$Agencia, programasN[y,]$Agencia] <- matrizColaboracion [programasN[x,]$Agencia, programasN[y,]$Agencia] +1
+        }
+       }
+     
+      
+    }
+  }
+  
+  matrizColaboracion[matrizColaboracion >0]<-1
+  
+  matrizColaboracion <-  matrizColaboracion %>% mutate(Agencia = names(matrizColaboracion))
+  
+  setDT(matrizColaboracion)
+  matrizColaboracion <- melt(matrizColaboracion, id="Agencia")
+ 
+   #8.2 matriz Proyectada colaboracion de agencias
+  
+  matrizColaboracionP <- Agencias
+  
+  matrizColaboracionP <- matrizColaboracionP%>%mutate(Logo = NULL)
+  
+  matrizColaboracionP <- matrizColaboracionP%>%mutate(Agencia2 =Agencia)
+  matrizColaboracionP <- matrizColaboracionP%>%mutate(valor =0)
+  
+  matrizColaboracionP <- dcast(data=matrizColaboracionP,Agencia ~ Agencia2, fill = 0 )
+  matrizColaboracionP <- matrizColaboracionP%>%mutate(Agencia = NULL)
+  row.names(matrizColaboracionP) <- Agencias[,Agencia]
+  
+  
+  
+  
+  
+  for(ProgramaN in programasProyectaods$Programa){
+    
+    programasN <- programasProyectaods%>%filter(Programa == ProgramaN) %>% group_by(Agencia) %>% summarise(Participa = sum(as.integer(Participa)))
+    
+    
+    for(x in 1:nrow(programasN)){
+      
+      for(y in x:nrow(programasN)){
+        
+        if(x != y){
+          
+          matrizColaboracionP [programasN[x,]$Agencia, programasN[y,]$Agencia] <- matrizColaboracionP [programasN[x,]$Agencia, programasN[y,]$Agencia] +1
+        }
+      }
+      
+      
+    }
+  }
+  
+  matrizColaboracionP[matrizColaboracionP >0]<-1
+  
+  matrizColaboracionP <-  matrizColaboracionP %>% mutate(Agencia = names(matrizColaboracionP))
+  
+  setDT(matrizColaboracionP)
+  matrizColaboracionP <- melt(matrizColaboracionP, id="Agencia")
+  
+  #8 PROCESAMINETO DE INFORMACIÓN PARA GENERAR GRÁFICAS
+  
+l <- list("Estructura"= estructura,"Agencias"= Agencias, "Outcome" = Outcome,"Output" = Output, "Alianzas" = alianzas, "Recursos" = Recursos, "ValorAgregado" = dataValor , "Programas" = programas, "ColabAgencias" = matrizColaboracion , "ColabProyAge" = matrizColaboracionP )
 openxlsx::write.xlsx(l, "salida.xlsx")
 
